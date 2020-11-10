@@ -1,25 +1,25 @@
 primeNumbers = []
-(1..1000).each do |i| #1から1000までの配列を用意してeach文で回す
-  next if i == 1   # 1は素数でないのでとばす
+(1..1000).each do |i| # 1から1000までの配列を用意してeach文で回す、i はループ処理する為の変数
+  next if i == 1      # 1は素数でないのでとばす、もしくは配列を2から始めるとかもあり。
 
-  if i == 2        #2は素数なので引数にiを渡して次の数字に進む
+  if i == 2           # 2は素数なので引数にi=2を渡して次の数字に進む
     primeNumbers.push(i)
     next
   end
 
-  judge = true
+  judge = true                  #trueなら素数である。
   primeNumbers.each do |number| #下の処理をprimeNumbersそれぞれにしてやる。
-      if i % number == 0  #その数で割り切れたらfalseと判定して上のeach文を抜ける。
-        judge = false
-        break
+      if i % number == 0  #その配列のなかの数で割り切れたらfalseと判定して上のeach文を抜ける。
+        judge = false     #その配列のなかの数で割り切れたのでnumberは素数ではない
+        break             #素数と分かればループを抜ける
       end
   end
 
   primeNumbers.push(i) if judge #judgeがtrueなら数字(i)を返す
 
 end
-puts primeNumbers #選別を潜った数字だけ出力
 
+puts primeNumbers #選別を潜った数字だけ出力
 
 
 #問題１：以下の関数を作成してください。
@@ -32,12 +32,12 @@ puts primeNumbers #選別を潜った数字だけ出力
 
 def supply_card(count, contents)
 	contents_1 = contents.each_slice(2).map(&:first).to_s
-	 contents_2 = contents.each_slice(2).map(&:last).to_s
+  contents_2 = contents.each_slice(2).map(&:last).to_s
 
  	return contents_1, contents_2
 end
 
-puts  supply_card(2, “12345”)
+puts supply_card(2, “12345”)
 
 
 #問題２：以下の関数を作成してください。
