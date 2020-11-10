@@ -1,16 +1,16 @@
-primeNumbers = []
-(1..1000).each do |i| # 1から1000までの配列を用意してeach文で回す、i はループ処理する為の変数
-  next if i == 1      # 1は素数でないのでとばす、もしくは配列を2から始めるとかもあり。
+primeNumbers = []     #primenumbersは配列です、そのへんよろ。
+(1..1000).each do |i| #今回は1から1000までの配列を用意してeach文で回す、i はループ処理する為の変数
+  next if i == 1      #1は素数でないのでとばす、もしくは配列を2から始めるとかもあり。
 
   if i == 2           # 2は素数なので引数にi=2を渡して次の数字に進む
     primeNumbers.push(i)
     next
   end
 
-  judge = true                  #trueなら素数である。
-  primeNumbers.each do |number| #下の処理をprimeNumbersそれぞれにしてやる。
-      if i % number == 0  #その配列のなかの数で割り切れたらfalseと判定して上のeach文を抜ける。
-        judge = false     #その配列のなかの数で割り切れたのでnumberは素数ではない
+  judge = true                  #trueなら素数です。
+  primeNumbers.each do |number| #下の処理をprimeNumbers内の数字(number)それぞれにしてやる。
+      if i % number == 0  #primeNumbersのある１つの数字の中の小さな数で割り切れたらfalseと判定して上のeach文を抜ける。
+        judge = false     #その配列（primeNumbersのある１つの数字）のなかの数で割り切れたのでnumberは素数でない
         break             #素数と分かればループを抜ける
       end
   end
