@@ -24,10 +24,9 @@ puts primeNumbers #選別を潜った数字だけ出力
 
 require 'prime' #primeモジュールをインポート
 
-puts Prime.prime?(7) #引数に入れた数字を判定、7は素数ですかー？ true
-puts Prime.prime?(8) #8は素数ですかー？ false
+puts Prime.prime?(7) #引数に入れた数字を判定、7は素数？ ええ、true 違ったら、false
 
-Prime.each(20).each{|prime| #20までの数字の中で素数だけputsしてもらえます？
+Prime.each(20).each{|prime| #任意の数（今回は20）までの数字の中で素数だけputsして？
   puts prime
 }
 
@@ -39,15 +38,26 @@ Prime.each(20).each{|prime| #20までの数字の中で素数だけputsしても
 #返り値：要素が文字列の配列とする配られたカードの結果
 #第一引数が「2」、第二引数が「12345」の場合の実行結果：{‘135’, ‘24’}
 
+#１つ目の引数が１の場合は全部渡すしかないっしょ？2人以上ならその人数分で9まで回す、それをランダムに配りたいのでその中の数を文字列（str）に変えてから第二引数に入れて完了。
 
-def supply_card(count, contents)
-	contents_1 = contents.each_slice(2).map(&:first).to_s
-  contents_2 = contents.each_slice(2).map(&:last).to_s
+def supply_card(people, contents)
+	if   i = 1
+          return  all.contents
+	elsif  i >= 2
+	   for i in range(contents):
+            card_deck.append(number)
 
- 	return contents_1, contents_2
+
+    player_card.extend(random.sample(card_deck, maisu))
+    for i in range(maisu):
+        card_deck.remove(people)
+
+  if contents
+
 end
 
-puts supply_card(2, “12345”)
+puts people()
+number = [“1”, “2”, “3”, “4”, “5,” “6”, “7”, “8”, “9”]
 
 
 #問題２：以下の関数を作成してください。
@@ -71,6 +81,3 @@ def repeat(text)
 end
 
 put repeat(“aabbcccあdいeう”)
-
-
-
