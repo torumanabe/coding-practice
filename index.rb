@@ -1,4 +1,4 @@
-primeNumbers = []     #primenumbersは配列です、そのへんよろ。
+primeNumbers = []     #primNumbersは配列です、そのへんよろ。
 (1..1000).each do |i| #今回は1から1000までの配列を用意してeach文で回す、i はループ処理する為の変数
   next if i == 1      #1は素数でないのでとばす、もしくは配列を2から始めるとかもあり。
 
@@ -7,19 +7,29 @@ primeNumbers = []     #primenumbersは配列です、そのへんよろ。
     next
   end
 
-  judge = true                  #trueなら素数です。
+  judge = true                  #素数ならtrueっす。
+
   primeNumbers.each do |number| #下の処理をprimeNumbers内の数字(number)それぞれにしてやる。
-      if i % number == 0  #primeNumbersのある１つの数字の中の小さな数で割り切れたらfalseと判定して上のeach文を抜ける。
-        judge = false     #その配列（primeNumbersのある１つの数字）のなかの数で割り切れたのでnumberは素数でない
-        break             #素数と分かればループを抜ける
+      if i % number == 0  #primeNumbersのある１つの数字の中の小さな数で割り切れたらfalseと判定し、primeNumberをその数字内のnumberで割る処理を抜ける。
+        judge = false     #その配列（primeNumbersのある１つの数字）のなかの数で割り切れたらnumberは素数でないのでfalseで↓
+        break             #ループ抜ける
       end
   end
 
-  primeNumbers.push(i) if judge #judgeがtrueなら数字(i)を返す
+  primeNumbers.push(i) if judge #judgeがtrueなら数字(i)を返すを繰り返す。
 
 end
 
 puts primeNumbers #選別を潜った数字だけ出力
+
+require 'prime' #primeモジュールをインポート
+
+puts Prime.prime?(7) #引数に入れた数字を判定、7は素数ですかー？ true
+puts Prime.prime?(8) #8は素数ですかー？ false
+
+Prime.each(20).each{|prime| #20までの数字の中で素数だけputsしてもらえます？
+  puts prime
+}
 
 
 #問題１：以下の関数を作成してください。
@@ -61,3 +71,6 @@ def repeat(text)
 end
 
 put repeat(“aabbcccあdいeう”)
+
+
+
