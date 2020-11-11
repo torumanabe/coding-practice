@@ -67,10 +67,8 @@ number = [“1”, “2”, “3”, “4”, “5,” “6”, “7”, “8”
 #引数が「aabbcccあdいeう」の場合の実行結果：{‘c’}
 
 def repeat(text)
-	count = 1
-   	 max_word =
 
-        for word in text(1,len(text))
+        each i in text
             if text[i] == text[i-1]
                 count+=1
 
@@ -78,6 +76,7 @@ def repeat(text)
                     max = cnt
             	else:
                return max_word
+
 end
 
-put repeat(“aabbcccあdいeう”)
+put text(“aabbcccあdいeう”)
